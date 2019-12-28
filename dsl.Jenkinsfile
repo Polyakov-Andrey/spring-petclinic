@@ -1,7 +1,15 @@
 pipeline {
    agent any
-
+   environment { 
+        CC = 'clang'
+   }
+   
    stages {
+     stage('GIT') {
+        steps {
+           sh 'git -version'
+        }
+     }
      stage('Build') {
        steps {
           echo 'Building..'
