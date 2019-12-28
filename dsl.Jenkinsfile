@@ -14,6 +14,7 @@ pipeline {
      stage('Build') {
        steps {
           echo 'Building..'
+          sh label: 'Create jar', script: './mvnw package'
        }
      }
      stage('Test') {
