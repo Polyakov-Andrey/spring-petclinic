@@ -7,7 +7,7 @@ pipeline {
    stages {
      stage('GIT') {
         steps {
-           sh 'git -version'
+           sh 'git --version'
            git 'https://github.com/Polyakov-Andrey/spring-petclinic.git'
         }    
      }
