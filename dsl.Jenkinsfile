@@ -1,13 +1,22 @@
 pipeline {
-     agent none
-     stages {
-        stage('GIT') {
-            // agent { docker 'maven:3-alpine' } 
-            steps {
-                echo 'Hello, Maven'
-                sh 'git --version'
-            }
-        }
-    }
-    /* insert Declarative Pipeline here */
+   agent any
+
+   stages {
+     stage('Build') {
+       steps {
+          echo 'Building..'
+       }
+     }
+     stage('Test') {
+       steps {
+          echo 'Testing..'
+       }
+     }
+     stage('Deploy') {
+       steps {
+           echo 'Deploying....'
+       }
+     }
+   }
+   /* insert Declarative Pipeline here */
 }
