@@ -8,9 +8,8 @@ pipeline {
      stage('GIT') {
         steps {
            sh 'git -version'
-        }
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']],
-                  userRemoteConfigs: [[url: 'https://github.com/Polyakov-Andrey/spring-petclinic.git']]])
+           git 'https://github.com/Polyakov-Andrey/spring-petclinic.git'
+        }    
      }
      stage('Build') {
        steps {
